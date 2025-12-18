@@ -1,0 +1,16 @@
+{
+  "name": "sinfulmaro",
+  "version": "1.0.0",
+  "description": "Order management system with cancel functionality",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node index.js"
+  },
+  "keywords": ["order", "cancel", "management"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.0.0"
+  }
+}
