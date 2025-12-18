@@ -1,0 +1,23 @@
+{
+  "camera_id": 0,
+  "width": 1280,
+  "height": 720,
+  "fps": 30,
+  "output_dir": "recordings",
+  "detection": {
+    "history": 500,
+    "var_threshold": 16,
+    "min_area": 500,
+    "motion_threshold": 0.5
+  },
+  "recording": {
+    "pre_motion_buffer": 5,
+    "post_motion_buffer": 30,
+    "codec": "mp4v"
+  },
+  "display": {
+    "show_preview": true,
+    "show_motion_overlay": true,
+    "show_stats": true
+  }
+}
