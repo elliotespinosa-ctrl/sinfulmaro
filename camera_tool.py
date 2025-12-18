@@ -24,7 +24,7 @@ class MotionDetector:
             detectShadows=True
         )
         self.min_area = config.get('min_area', 500)
-        self.motion_threshold = config.get('motion_threshold', 25)
+        self.motion_threshold = config.get('motion_threshold', 0.5)
         self.kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5, 5))
         
     def detect(self, frame):
