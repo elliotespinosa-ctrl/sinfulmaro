@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="SS Turnaway">
+    <title>ShiftSmart Turnaway Tool</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon.svg">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📋 ShiftSmart Turnaway Tool</h1>
+            <p class="subtitle">Track and document your turnaways</p>
+        </header>
+
+        <main>
+            <!-- Quick Add Section -->
+            <section class="card">
+                <h2>Log Turnaway</h2>
+                <form id="turnaway-form">
+                    <div class="form-group">
+                        <label for="date">Date & Time</label>
+                        <input type="datetime-local" id="date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input type="text" id="location" placeholder="Store or facility name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reason">Reason for Turnaway</label>
+                        <select id="reason" required>
+                            <option value="">Select reason...</option>
+                            <option value="overstaffed">Overstaffed</option>
+                            <option value="shift-cancelled">Shift Cancelled</option>
+                            <option value="early-release">Early Release</option>
+                            <option value="not-needed">Not Needed</option>
+                            <option value="schedule-error">Schedule Error</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes">Notes</label>
+                        <textarea id="notes" rows="3" placeholder="Additional details, contact person, etc."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="compensation">Compensation Received?</label>
+                        <select id="compensation" required>
+                            <option value="none">None</option>
+                            <option value="partial">Partial Pay</option>
+                            <option value="full">Full Pay</option>
+                            <option value="pending">Pending</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        <span class="icon">✓</span> Log Turnaway
+                    </button>
+                </form>
+            </section>
+
+            <!-- Statistics Section -->
+            <section class="card stats-card">
+                <h2>Statistics</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-value" id="total-count">0</div>
+                        <div class="stat-label">Total Turnaways</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="month-count">0</div>
+                        <div class="stat-label">This Month</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="compensated-count">0</div>
+                        <div class="stat-label">Compensated</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recent Turnaways -->
+            <section class="card">
+                <div class="section-header">
+                    <h2>Recent Turnaways</h2>
+                    <button id="clear-all" class="btn btn-secondary btn-small">Clear All</button>
+                </div>
+                <div id="turnaway-list" class="turnaway-list">
+                    <p class="empty-state">No turnaways logged yet</p>
+                </div>
+            </section>
+
+            <!-- Export Section -->
+            <section class="card">
+                <h2>Export Data</h2>
+                <p class="help-text">Export your turnaway records for documentation or reporting purposes.</p>
+                <div class="button-group">
+                    <button id="export-json" class="btn btn-secondary">
+                        <span class="icon">📄</span> Export JSON
+                    </button>
+                    <button id="export-text" class="btn btn-secondary">
+                        <span class="icon">📝</span> Export Text
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>💡 Tip: Add this page to your home screen for quick access!</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

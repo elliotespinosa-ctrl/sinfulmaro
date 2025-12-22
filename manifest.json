@@ -1,0 +1,18 @@
+{
+    "name": "ShiftSmart Turnaway Tool",
+    "short_name": "SS Turnaway",
+    "description": "Track and document ShiftSmart turnaways for iPhone",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#F2F2F7",
+    "theme_color": "#007AFF",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "icon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        }
+    ]
+}
