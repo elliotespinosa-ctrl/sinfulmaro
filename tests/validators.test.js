@@ -5,7 +5,7 @@
 const {
   isValidEmail,
   isValidURL,
-  isValidPhone,
+  isValidUSPhone,
   isValidCreditCard,
   isEmpty,
   validatePassword,
@@ -43,16 +43,16 @@ describe('Validation Utilities', () => {
     });
   });
 
-  describe('isValidPhone', () => {
-    test('validates correct phone numbers', () => {
-      expect(isValidPhone('123-456-7890')).toBe(true);
-      expect(isValidPhone('(123) 456-7890')).toBe(true);
-      expect(isValidPhone('1234567890')).toBe(true);
+  describe('isValidUSPhone', () => {
+    test('validates correct US phone numbers', () => {
+      expect(isValidUSPhone('123-456-7890')).toBe(true);
+      expect(isValidUSPhone('(123) 456-7890')).toBe(true);
+      expect(isValidUSPhone('1234567890')).toBe(true);
     });
 
     test('rejects invalid phone numbers', () => {
-      expect(isValidPhone('123')).toBe(false);
-      expect(isValidPhone('abc-def-ghij')).toBe(false);
+      expect(isValidUSPhone('123')).toBe(false);
+      expect(isValidUSPhone('abc-def-ghij')).toBe(false);
     });
   });
 

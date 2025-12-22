@@ -81,9 +81,11 @@ describe('String Utilities', () => {
   });
 
   describe('countOccurrences', () => {
-    test('counts occurrences correctly', () => {
+    test('counts non-overlapping occurrences correctly', () => {
       expect(countOccurrences('hello world hello', 'hello')).toBe(2);
-      expect(countOccurrences('aaa', 'aa')).toBe(1); // Non-overlapping count
+      // In 'aaa', 'aa' appears once (positions 0-1), not twice (overlapping at 1-2)
+      expect(countOccurrences('aaa', 'aa')).toBe(1);
+      expect(countOccurrences('aaaa', 'aa')).toBe(2); // positions 0-1 and 2-3
     });
 
     test('returns 0 for no matches', () => {

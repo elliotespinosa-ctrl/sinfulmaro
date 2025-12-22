@@ -28,11 +28,11 @@ const isValidURL = (url) => {
 };
 
 /**
- * Validates a phone number (basic US format)
+ * Validates a US phone number
  * @param {string} phone - The phone number to validate
  * @returns {boolean} - True if valid, false otherwise
  */
-const isValidPhone = (phone) => {
+const isValidUSPhone = (phone) => {
   const phoneRegex = /^\+?1?\s*\(?(\d{3})\)?[-.\s]?(\d{3})[-.\s]?(\d{4})$/;
   return typeof phone === 'string' && phoneRegex.test(phone);
 };
@@ -139,7 +139,7 @@ const validatePassword = (password) => {
 module.exports = {
   isValidEmail,
   isValidURL,
-  isValidPhone,
+  isValidUSPhone,
   isValidCreditCard,
   isEmpty,
   validatePassword,
