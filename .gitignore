@@ -23,7 +23,6 @@ build/
 *.swp
 *.swo
 *~
-.DS_Store
 
 # Testing
 coverage/

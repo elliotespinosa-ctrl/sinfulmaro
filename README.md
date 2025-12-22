@@ -39,9 +39,6 @@ npm install
 ## 💻 Usage
 
 ```bash
-# Run the application
-npm start
-
 # Run tests
 npm test
 
