@@ -1,17 +1,33 @@
 {
   "name": "sinfulmaro",
   "version": "1.0.0",
-  "description": "A modern project repository",
+  "description": "A modern project repository with comprehensive utility libraries",
+  "main": "src/utils/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/app.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
     "lint": "eslint .",
-    "format": "prettier --write ."
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "example:data": "node src/examples/dataProcessing.js",
+    "example:async": "node src/examples/asyncTasks.js",
+    "example:validation": "node src/examples/formValidation.js"
   },
-  "keywords": [],
+  "keywords": [
+    "utilities",
+    "helpers",
+    "javascript",
+    "nodejs",
+    "toolkit"
+  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^8.57.0",
+    "jest": "^29.7.0",
     "prettier": "^3.1.1"
   }
 }
