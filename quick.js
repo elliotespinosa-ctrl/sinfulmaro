@@ -15,20 +15,43 @@ const NOTES_FILE = path.join(__dirname, 'quick-notes.json');
 // Initialize notes file if it doesn't exist
 function initNotesFile() {
   if (!fs.existsSync(NOTES_FILE)) {
-    fs.writeFileSync(NOTES_FILE, JSON.stringify({ notes: [] }, null, 2));
+    try {
+      fs.writeFileSync(NOTES_FILE, JSON.stringify({ notes: [] }, null, 2));
+    } catch (error) {
+      console.error('Error: Unable to create notes file:', error.message);
+      process.exit(1);
+    }
   }
 }
 
 // Read notes from file
 function readNotes() {
   initNotesFile();
-  const data = fs.readFileSync(NOTES_FILE, 'utf8');
-  return JSON.parse(data);
+  try {
+    const data = fs.readFileSync(NOTES_FILE, 'utf8');
+    return JSON.parse(data);
+  } catch (error) {
+    console.error('Error: Unable to read notes file:', error.message);
+    console.error('The notes file may be corrupted. Creating a fresh file...');
+    try {
+      fs.writeFileSync(NOTES_FILE, JSON.stringify({ notes: [] }, null, 2));
+      return { notes: [] };
+    } catch (writeError) {
+      console.error('Error: Unable to create new notes file:', writeError.message);
+      process.exit(1);
+    }
+  }
 }
 
 // Write notes to file
 function writeNotes(data) {
-  fs.writeFileSync(NOTES_FILE, JSON.stringify(data, null, 2));
+  try {
+    fs.writeFileSync(NOTES_FILE, JSON.stringify(data, null, 2));
+  } catch (error) {
+    console.error('Error: Unable to save notes:', error.message);
+    console.error('Please check disk space and file permissions.');
+    process.exit(1);
+  }
 }
 
 // Add a new note
