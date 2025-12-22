@@ -1,0 +1,15 @@
+{
+  "user": {
+    "name": "Default User",
+    "location": "Albuquerque",
+    "timezone": "America/Denver",
+    "preferences": {
+      "theme": "light",
+      "language": "en-US"
+    },
+    "metadata": {
+      "createdAt": "2025-12-22T21:36:00.000Z",
+      "updatedAt": "2025-12-22T21:36:00.000Z"
+    }
+  }
+}

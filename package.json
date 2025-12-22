@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "A modern project repository",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node tests/profile.test.js",
+    "example": "node example.js",
     "lint": "eslint .",
     "format": "prettier --write ."
   },
