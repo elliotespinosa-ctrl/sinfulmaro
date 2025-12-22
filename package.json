@@ -1,0 +1,12 @@
+{
+  "name": "sinfulmaro-quick",
+  "version": "1.0.0",
+  "description": "Quick note-taking command-line tool",
+  "main": "quick.js",
+  "scripts": {
+    "quick": "node quick.js"
+  },
+  "keywords": ["quick", "notes", "cli", "productivity"],
+  "author": "",
+  "license": "MIT"
+}
