@@ -1,0 +1,17 @@
+{
+  "name": "sinfulmaro",
+  "version": "1.0.0",
+  "description": "A modern project repository",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "prettier": "^3.1.1"
+  }
+}
